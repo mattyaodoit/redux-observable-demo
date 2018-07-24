@@ -25,7 +25,7 @@ class App extends Component {
           <div className="wrapper">
             <Header title="redux-observable demo"/>
             <Switch>
-              <Route path="/" component={ Home }/>
+              <Route exact path={process.env.PUBLIC_URL + '/'} component={ Home }/>
             </Switch>
           </div>
         </Router>

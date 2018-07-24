@@ -10,7 +10,7 @@ class Header extends Component {
       links: [
         {
           title: 'Github User Fetch',
-          href: '/'
+          href: process.env.PUBLIC_URL + '/'
         }
       ]
     };
