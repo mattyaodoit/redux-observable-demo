@@ -4,9 +4,6 @@
     <list default="true" id="1115312e-4f37-44ba-ae35-d679501bb7ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/examples/simple/index.js" afterPath="$PROJECT_DIR$/src/components/examples/simple/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/home/index.js" afterPath="$PROJECT_DIR$/src/containers/home/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/epics/userEpics.js" afterPath="$PROJECT_DIR$/src/epics/userEpics.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/userReducer.js" afterPath="$PROJECT_DIR$/src/reducers/userReducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userEpics.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userEpics.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/epics/userEpics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -56,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/examples/simple/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+            <state relative-caret-position="258">
+              <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -139,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/components/common/header/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/userReducer.js" />
         <option value="$PROJECT_DIR$/src/containers/home/index.js" />
-        <option value="$PROJECT_DIR$/src/components/examples/simple/index.js" />
         <option value="$PROJECT_DIR$/src/epics/userEpics.js" />
+        <option value="$PROJECT_DIR$/src/components/examples/simple/index.js" />
       </list>
     </option>
   </component>
@@ -333,7 +330,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26183000" />
+    <option name="totallyTimeSpent" value="26786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="951" extended-state="6" />
@@ -765,26 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/examples/simple/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/userReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -797,10 +774,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/epics/userEpics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/examples/simple/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

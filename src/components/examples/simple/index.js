@@ -88,6 +88,11 @@ class Simple extends Component {
     });
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.sendRequest(this.state.name);
+  }
+
   render() {
     const { 
       classes,
@@ -138,7 +143,7 @@ class Simple extends Component {
         <div className="example simple">
           <h3>Get Github Users</h3>
 
-          <form className={classes.container} noValidate autoComplete="off">
+          <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField
               id="name"
               label="Search by username"
