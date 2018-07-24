@@ -17,9 +17,7 @@ export const UserReducer = (state = initialState, action) => {
       });
     case userConstants.FETCH_USER_FULFILLED:
       return Object.assign({}, state, {
-        user: {
-          [action.payload.id]: action.payload
-        },
+        user: action.payload,
         isFetchingUser: false,
         error: null
       });

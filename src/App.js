@@ -7,7 +7,7 @@ import {
 import {
   Provider
 } from 'react-redux';
-import './App.scss';
+import './App.css';
 import Home from './containers/home';
 // Components
 import Header from './components/common/header';
@@ -25,7 +25,7 @@ class App extends Component {
           <div className="wrapper">
             <Header title="redux-observable demo"/>
             <Switch>
-              <Route exact path="/" component={ Home }/>
+              <Route path="/" component={ Home }/>
             </Switch>
           </div>
         </Router>

@@ -1,0 +1,24 @@
+nav {
+  height: 100%;
+  line-height: 80px; }
+  nav a {
+    color: royalblue;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    height: 100%;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+    padding: 0 15px;
+    transition: all 0.2s linear; }
+    nav a:last-child {
+      border-right: none; }
+    nav a:hover {
+      background: #999;
+      color: white; }
+    nav a.active {
+      color: crimson;
+      text-decoration: none; }
+      nav a.active:hover {
+        color: white; }

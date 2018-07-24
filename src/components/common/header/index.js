@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Navigator from '../navigator';
-import './_header.scss';
+import './header.css';
 
 class Header extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Header extends Component {
     this.state = {
       links: [
         {
-          title: 'Simple redux-observable Example',
+          title: 'Github User Fetch',
           href: '/'
         }
       ]

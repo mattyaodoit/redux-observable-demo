@@ -1,0 +1,14 @@
+header {
+  position: relative;
+  height: 80px;
+  background: burlywood;
+  width: 100%; }
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto; }
+  header .logo-wrapper {
+    display: flex;
+    align-items: center; }

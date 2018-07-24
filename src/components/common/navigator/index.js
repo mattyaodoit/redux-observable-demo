@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import './_navigator.scss';
+import './navigator.css';
 
 class Navigator extends Component {
   render() {
