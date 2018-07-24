@@ -18,12 +18,10 @@ class Home extends Component {
     }
 
     sendRequest(username) {
-        console.log('username: ', username);
         this.props.fetchUser(username);
     }
 
     cancelRequest() {
-        console.log('cancel');
         this.props.cancelRequest();
     }
 
@@ -36,6 +34,7 @@ class Home extends Component {
                     <div className="container">
                         <SimpleExample 
                             user={this.props.user}
+                            userError={this.props.userError}
                             sendRequest={this.sendRequest}
                             cancelRequest={this.cancelRequest}
                             isFetching={this.props.isFetchingUser}

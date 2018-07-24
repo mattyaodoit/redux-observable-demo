@@ -27,6 +27,12 @@ export const UserReducer = (state = initialState, action) => {
         isFetchingUser: false,
         error: null
       });
+    case userConstants.FETCH_USER_REJECTED:
+      return Object.assign({}, state, {
+        user: {},
+        isFetchingUser: false,
+        error: action.payload
+      });
     default:
       return state;
   }

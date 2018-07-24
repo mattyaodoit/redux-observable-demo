@@ -12,6 +12,9 @@ import TextField from '@material-ui/core/TextField';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import IconButton from '@material-ui/core/IconButton';
+import Snackbar from '@material-ui/core/Snackbar';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import ErrorIcon from '@material-ui/icons/Error';
 
 const styles = theme => ({
   button: {
@@ -33,6 +36,13 @@ const styles = theme => ({
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
+  progressBar: {
+    position: 'absolute',
+    top: 80,
+    left: 0,
+    right: 0,
+    zIndex: 999
+  },
   pos: {
     marginBottom: 12,
   },
@@ -44,6 +54,16 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
+  },
+  error: {
+    backgroundColor: theme.palette.error.dark
+  },
+  message: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  icon: {
+    marginRight: theme.spacing.unit
   }
 });
 
@@ -70,8 +90,9 @@ class Simple extends Component {
 
   render() {
     const { 
-      classes, 
+      classes,
       user,
+      userError,
       sendRequest,
       cancelRequest,
       isFetching
@@ -106,7 +127,9 @@ class Simple extends Component {
       </Card> : null;
 
     const progressDOM = isFetching ?
-      <LinearProgress /> : null;
+      <div className={classes.progressBar}>
+        <LinearProgress />
+      </div>: null;
 
     if (!this.props) {
       return null;
@@ -136,6 +159,27 @@ class Simple extends Component {
           </div>
           { progressDOM }
           { cardDOM }
+
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left'
+            }}
+            open={!this.checkEmptyObject(this.props.userError)}
+            ContentProps={{
+              'aria-describedby': 'message-id',
+            }}
+          >
+            <SnackbarContent
+              className={classes.error}
+              aria-describedby="client-snackbar"
+              message={<span id="client-snackbar" className={classes.message}>
+                  <ErrorIcon className={classes.icon}/>
+                  {this.checkEmptyObject(userError) ? '' : userError.message}
+                </span>
+              }
+            />
+          </Snackbar>
         </div>
       );
     }
@@ -145,6 +189,7 @@ class Simple extends Component {
 Simple.propTypes = {
   classes: PropTypes.object.isRequired,
   user: PropTypes.object,
+  userError: PropTypes.object,
   sendRequest: PropTypes.func,
   cancelRequest: PropTypes.func,
   isFetching: PropTypes.bool
