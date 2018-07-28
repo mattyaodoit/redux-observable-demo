@@ -9,8 +9,12 @@ class Header extends Component {
     this.state = {
       links: [
         {
-          title: 'Github User Fetch',
+          title: 'Fetch user (redux-observable)',
           href: process.env.PUBLIC_URL + '/'
+        },
+        {
+          title: 'Fetch user (redux-thunk)',
+          href: process.env.PUBLIC_URL + '/redux-thunk'
         }
       ]
     };

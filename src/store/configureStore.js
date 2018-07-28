@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
+import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory'
 import { routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
@@ -21,7 +22,7 @@ const configureStore = (initialState) => {
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(epicMiddleware, middleware, logger),
+      applyMiddleware(thunk, epicMiddleware, middleware, logger),
       persistState(
         window.location.href.match(
           /[?&]debug_session=([^&]+)\b/

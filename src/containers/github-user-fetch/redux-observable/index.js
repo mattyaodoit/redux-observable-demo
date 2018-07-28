@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {
     connect
 } from 'react-redux';
-import SimpleExample from './../../components/examples/simple';
-import userEpics from './../../epics/userEpics';
+import SimpleExample from '../../../components/github-user-fetch/index';
+import userEpics from '../../../epics/userEpics';
 
 class Home extends Component {
     constructor(props) {
@@ -32,6 +32,7 @@ class Home extends Component {
             return (
                 <div className="page home">
                     <div className="container">
+                        <h3>Get Github Users (redux-observable)</h3>
                         <SimpleExample 
                             user={this.props.user}
                             userError={this.props.userError}

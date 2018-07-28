@@ -141,8 +141,6 @@ class Simple extends Component {
     } else {
       return (
         <div className="example simple">
-          <h3>Get Github Users</h3>
-
           <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField
               id="name"
