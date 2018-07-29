@@ -10,19 +10,20 @@ import rootEpic from './../epics';
 import rootReducer from '../reducers';
 
 const history = createHistory();
-const middleware = routerMiddleware(history);
+const routeMiddleware = routerMiddleware(history);
 const logger = createLogger({
   level: 'info',
   collapsed: true
 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const epicMiddleware = createEpicMiddleware();
 const configureStore = (initialState) => {
   const store = createStore(
     rootReducer,
     initialState,
-    compose(
-      applyMiddleware(thunk, epicMiddleware, middleware, logger),
+    composeEnhancers(
+      applyMiddleware(thunk, epicMiddleware, routeMiddleware, logger),
       persistState(
         window.location.href.match(
           /[?&]debug_session=([^&]+)\b/

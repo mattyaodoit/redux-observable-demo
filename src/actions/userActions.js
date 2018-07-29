@@ -4,32 +4,27 @@ import axios from 'axios';
 const BASE_URL = 'https://api.github.com/users/';
 
 const UserActions = {
-  fetchUserRequest: function() {
-    return {
-      type: UserConstants.FETCH_USER
-    }
-  },
+  fetchUserRequest: (username) => ({
+    type: UserConstants.FETCH_USER,
+    username
+  }),
 
-  fetchUserError: function(error) {
-    return {
-      error,
-      type: UserConstants.FETCH_USER_REJECTED
-    };
-  },
+  fetchUserError: (error) => ({
+    error,
+    type: UserConstants.FETCH_USER_REJECTED
+  }),
 
-  fetchUserFulfilled: function(payload) {
-    return {
-      payload,
-      type: UserConstants.FETCH_USER_FULFILLED
-    };
-  },
+  fetchUserFulfilled: (payload) => ({
+    payload,
+    type: UserConstants.FETCH_USER_FULFILLED
+  }),
 
   fetchUser: (username, cb) => {
     const _self = this;
 
     if(username !== undefined) {
       return (dispatch) => {
-        dispatch(_self.a.fetchUserRequest());
+        dispatch(_self.a.fetchUserRequest(username));
         return axios({
           method: 'get',
           url: `${BASE_URL}${username}`
