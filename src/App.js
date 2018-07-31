@@ -8,8 +8,8 @@ import {
   Provider
 } from 'react-redux';
 import './App.css';
-import ReduxObservable from './containers/github-user-fetch/redux-observable';
-import ReduxThunk from './containers/github-user-fetch/redux-thunk';
+import ReduxObservable from './containers/github-fetch/redux-observable';
+import ReduxThunk from './containers/github-fetch/redux-thunk';
 // Components
 import Header from './components/common/header';
 

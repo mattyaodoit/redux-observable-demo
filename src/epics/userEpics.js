@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { mergeMap, map, takeUntil, catchError } from 'rxjs/operators';
+import { mergeMap, filter, map, takeUntil, catchError } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
 import { ofType } from 'redux-observable';
 import userConstants from './../constants/userConstants';
@@ -20,23 +20,22 @@ const userEpics = {
     type: userConstants.FETCH_USER_CANCELLED
   }),
 
-  fetchUserError: () => ({
-    type: userConstants.FETCH_USER_REJECTED
+  fetchUserError: (error) => ({
+    type: userConstants.FETCH_USER_REJECTED,
+    payload: error.xhr.response
   }),
 
   fetchUserEpic: (action$) => action$.pipe(
     ofType(userConstants.FETCH_USER),
+    filter(action => action.payload !== undefined),
     mergeMap(action => ajax.getJSON(`${BASE_URL}${action.payload}`).pipe(
-      map(response => this.a.fetchUserFulfilled(response)),
+      map(userResponse => this.a.fetchUserFulfilled(userResponse)),
       takeUntil(action$.pipe(
         ofType(userConstants.FETCH_USER_CANCELLED)
       )),
-      catchError(error => of({
-        type: userConstants.FETCH_USER_REJECTED,
-        payload: error.xhr.response
-      }))
+      catchError(error => of(this.a.fetchUserError(error)))
     ))
-  )
+  ),
 };
 
 export default userEpics;

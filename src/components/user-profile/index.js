@@ -34,7 +34,8 @@ const styles = theme => ({
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
+    backgroundPosition: 'initial'
   },
   progressBar: {
     position: 'absolute',
@@ -53,7 +54,7 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200,
+    width: 450,
   },
   error: {
     backgroundColor: theme.palette.error.dark
@@ -67,7 +68,7 @@ const styles = theme => ({
   }
 });
 
-class Simple extends Component {
+class UserProfile extends Component {
   constructor(props) {
     super(props);
 
@@ -99,7 +100,8 @@ class Simple extends Component {
       user,
       userError,
       sendRequest,
-      cancelRequest,
+      cancelUserRequest,
+      cancelRepoRequest,
       isFetching
     } = this.props;
 
@@ -140,7 +142,7 @@ class Simple extends Component {
       return null;
     } else {
       return (
-        <div className="example simple">
+        <div className="user-profile-wrapper">
           <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField
               id="name"
@@ -156,8 +158,11 @@ class Simple extends Component {
             <Button variant="contained" color="primary" className={classes.button} onClick={sendRequest.bind(this, this.state.name)}>
               Get user
             </Button>
-            <Button variant="contained" color="secondary" className={classes.button} onClick={cancelRequest}>
-              Cancel request
+            <Button variant="contained" color="secondary" className={classes.button} onClick={cancelUserRequest}>
+              Cancel user request
+            </Button>
+            <Button variant="contained" color="secondary" className={classes.button} onClick={cancelRepoRequest}>
+              Cancel repo request
             </Button>
           </div>
           { progressDOM }
@@ -189,13 +194,14 @@ class Simple extends Component {
   }
 }
 
-Simple.propTypes = {
+UserProfile.propTypes = {
   classes: PropTypes.object.isRequired,
   user: PropTypes.object,
   userError: PropTypes.object,
   sendRequest: PropTypes.func,
-  cancelRequest: PropTypes.func,
+  cancelUserRequest: PropTypes.func,
+  cancelRepoRequest: PropTypes.func,
   isFetching: PropTypes.bool
 };
 
-export default withStyles(styles)(Simple);
+export default withStyles(styles)(UserProfile);

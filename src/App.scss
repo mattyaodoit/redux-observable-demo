@@ -1,11 +1,17 @@
-.App {
-  text-align: center;
-}
-
 .page {
   .container {
+    display: grid;
     max-width: 1200px;
     margin: 0 auto;
+    height: 100vh;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+
+    .repos-grid {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+    }
   }
 }
 

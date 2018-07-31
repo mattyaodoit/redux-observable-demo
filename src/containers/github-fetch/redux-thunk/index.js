@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   connect
 } from 'react-redux';
-import SimpleExample from '../../../components/github-user-fetch/index';
+import SimpleExample from '../../../components/user-profile/index';
 import UserActions from '../../../actions/userActions';
 
 class ReduxThunkExample extends Component {

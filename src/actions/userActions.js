@@ -9,8 +9,8 @@ const UserActions = {
     username
   }),
 
-  fetchUserError: (error) => ({
-    error,
+  fetchUserError: (payload) => ({
+    payload,
     type: UserConstants.FETCH_USER_REJECTED
   }),
 
