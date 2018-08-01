@@ -25,10 +25,6 @@ const styles = theme => ({
 });
 
 class UserRepos extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleClick = (url) => {
     window.open(url, '_blank');
   };

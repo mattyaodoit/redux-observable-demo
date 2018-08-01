@@ -16,13 +16,12 @@ const logger = createLogger({
   collapsed: true
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const epicMiddleware = createEpicMiddleware();
-const configureStore = (initialState) => {
+
+export default () => {
   const store = createStore(
     rootReducer,
-    initialState,
-    composeEnhancers(
+    compose(
       applyMiddleware(thunk, epicMiddleware, routeMiddleware, logger),
       persistState(
         window.location.href.match(
@@ -34,18 +33,9 @@ const configureStore = (initialState) => {
 
   epicMiddleware.run(rootEpic);
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers/index').default;
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-
   return {
     store,
     history
   };
 };
 
-export default configureStore;

@@ -35,7 +35,7 @@ const userEpics = {
       )),
       catchError(error => of(this.a.fetchUserError(error)))
     ))
-  ),
+  )
 };
 
 export default userEpics;

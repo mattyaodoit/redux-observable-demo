@@ -28,7 +28,7 @@ const repoEpics = {
   fetchRepoEpic: (action$) => action$.pipe(
     ofType(repoConstants.FETCH_REPO),
     filter(action => action.payload !== undefined),
-    mergeMap(response => ajax.getJSON(`${BASE_URL}${response.payload}/repos`).pipe(
+    mergeMap(response => ajax.getJSON(`${BASE_URL}${response.payload}/repos?per_page=200`).pipe(
       map(repoResponse => this.a.fetchRepoFulfilled(repoResponse)),
       takeUntil(action$.pipe(
         ofType(repoConstants.FETCH_REPO_CANCELLED)

@@ -11,16 +11,13 @@ class Home extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            toggleCard: false
-        }
-
         this.sendRequest = this.sendRequest.bind(this);
         this.cancelUserRequest = this.cancelUserRequest.bind(this);
         this.cancelRepoRequest = this.cancelRepoRequest.bind(this);
     }
 
     sendRequest(username) {
+        console.log('username: ', username);
         this.props.fetchUser(username);
         this.props.fetchRepo(username);
     }
